@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_basic_string_arrays",
+  "info": {
+    "displayName": "Quotes",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Quote": {
+      "type": "text"
+    },
+    "Name": {
+      "type": "string"
+    }
+  }
+}
