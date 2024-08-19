@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "closings",
+  "info": {
+    "singularName": "closing",
+    "pluralName": "closings",
+    "displayName": "Closings"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Company": {
+      "type": "string",
+      "required": false
+    },
+    "Industry": {
+      "type": "string",
+      "required": true
+    },
+    "DateClosed": {
+      "type": "date",
+      "required": true
+    },
+    "DealAmount": {
+      "type": "string",
+      "required": true
+    },
+    "CompanyLocation": {
+      "type": "string",
+      "required": true
+    },
+    "Article": {
+      "type": "text",
+      "required": true
+    },
+    "Testimonials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonial.testimonial"
+    }
+  }
+}

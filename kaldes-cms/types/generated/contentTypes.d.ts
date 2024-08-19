@@ -362,6 +362,46 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiClosingClosing extends Schema.CollectionType {
+  collectionName: 'closings';
+  info: {
+    singularName: 'closing';
+    pluralName: 'closings';
+    displayName: 'Closings';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Company: Attribute.String;
+    Industry: Attribute.String & Attribute.Required;
+    DateClosed: Attribute.Date & Attribute.Required;
+    DealAmount: Attribute.String & Attribute.Required;
+    CompanyLocation: Attribute.String & Attribute.Required;
+    Article: Attribute.Text & Attribute.Required;
+    Testimonials: Attribute.Relation<
+      'api::closing.closing',
+      'oneToMany',
+      'api::testimonial.testimonial'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::closing.closing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::closing.closing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTestimonialTestimonial extends Schema.CollectionType {
   collectionName: 'testimonials';
   info: {
@@ -831,6 +871,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::closing.closing': ApiClosingClosing;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
