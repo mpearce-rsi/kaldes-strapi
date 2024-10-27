@@ -4,7 +4,8 @@
   "info": {
     "singularName": "closing",
     "pluralName": "closings",
-    "displayName": "Closings"
+    "displayName": "Closings",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,10 +24,6 @@
       "type": "date",
       "required": true
     },
-    "DealAmount": {
-      "type": "string",
-      "required": true
-    },
     "CompanyLocation": {
       "type": "string",
       "required": true
@@ -39,6 +36,13 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::testimonial.testimonial"
+    },
+    "LoanType": {
+      "type": "string"
+    },
+    "DealAmountMillions": {
+      "type": "decimal",
+      "required": true
     }
   }
 }

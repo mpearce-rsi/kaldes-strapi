@@ -16,14 +16,9 @@
       "type": "text",
       "required": true
     },
-    "Title": {
+    "Name": {
       "type": "string",
       "required": true
-    },
-    "Quotes": {
-      "type": "component",
-      "repeatable": true,
-      "component": "basic.string-array"
     }
   }
 }
